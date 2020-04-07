@@ -1,41 +1,47 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# hypixie [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/hypixie/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/hypixie)
 
-My awesome module.
+A simplified interface for the Hypixel api.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/hypixie.png)](https://npmjs.com/package/hypixie)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install hypixie
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const hypixie = require("hypixie");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	const { displayname } = await hypixie("player", {
+		uuid: "56da43a4-088d-4a76-82b6-dd431535015e",
+		key: "some api key"
+	});
+
+	console.log(displayname);
+	//=> "Richienb"
+})();
 ```
 
 ## API
 
-### theModule(input, options?)
+### hypixie(endpoint, options)
 
-#### input
+#### endpoint
 
 Type: `string`
 
-Lorem ipsum.
+The [API endpoint](https://github.com/HypixelDev/PublicAPI/tree/master/Documentation/methods) to call.
 
 #### options
 
 Type: `object`
 
-##### postfix
+The options to pass to the API.
 
-Type: `string`\
-Default: `rainbows`
+### hypixie.HypixelError
 
-Lorem ipsum.
+Exposed for instanceof checks. This type of error is thrown when the API returns an error.
