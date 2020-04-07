@@ -1,6 +1,6 @@
 {
 	"name": "hypixie",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "A simplified interface for the Hypixel api.",
 	"repository": "https://github.com/Richienb/hypixie.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
